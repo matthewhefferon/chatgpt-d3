@@ -1,11 +1,13 @@
 import "./App.css";
-import BarChart from "./components/BarChart";
+import BarChartD3 from "./components/BarChartD3";
+import BarChartVisx from "./components/BarChartVisx";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BarChart />
+        <BarChartD3 />
+        <BarChartVisx />
       </header>
     </div>
   );
