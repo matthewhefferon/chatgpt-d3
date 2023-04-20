@@ -59,9 +59,9 @@ const BarChartD3 = () => {
       .append("rect")
       .attr("class", "bar")
       .attr("x", (d) => xScale(d.name) + margin.left)
-      .attr("y", (d) => yScale(d.value) + margin.top)
+      .attr("y", height + margin.top)
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => height - yScale(d.value))
+      .attr("height", 0)
       .attr("fill", "steelblue")
       .on("mouseover", (event, d) => {
         tooltip.transition().duration(200).style("opacity", 0.9);
@@ -72,14 +72,15 @@ const BarChartD3 = () => {
       })
       .on("mouseout", () => {
         tooltip.transition().duration(500).style("opacity", 0);
-      });
+      })
+      .transition()
+      .duration(1000)
+      .delay((d, i) => i * 100)
+      .attr("y", (d) => yScale(d.value) + margin.top)
+      .attr("height", (d) => height - yScale(d.value));
   }, []);
 
-  return (
-    <svg ref={chartRef} width="400" height="200">
-      <g></g>
-    </svg>
-  );
+  return <svg ref={chartRef} width="400" height="200" />;
 };
 
 export default BarChartD3;
