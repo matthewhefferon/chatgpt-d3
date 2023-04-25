@@ -1,13 +1,16 @@
 import "./App.css";
-import BarChartD3 from "./components/BarChartD3";
-// import BarChartVisx from "./components/BarChartVisx";
+import Bard from "./components/Bard";
+import ChatGPT from "./components/ChatGPT";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BarChartD3 />
-        {/* <BarChartVisx /> */}
+        {/* ChatGPT successfully created a bar chart in D3 with no errors! */}
+        <ChatGPT />
+        
+        {/* Bard failed to create a bar chart in D3 without errors */}
+        {/* <Bard /> */}
       </header>
     </div>
   );
