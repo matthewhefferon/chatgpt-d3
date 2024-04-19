@@ -1,5 +1,5 @@
 import "./App.css";
-import Bard from "./components/Bard";
+//import Bard from "./components/Bard";
 import ChatGPT from "./components/ChatGPT";
 
 function App() {
